@@ -1,7 +1,3 @@
-<?php
-session_start();
-$username = $_SESSION["username"];
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,9 +46,6 @@ $username = $_SESSION["username"];
                     <a class="dropdown-item" href="#">Template 3 </a>
                 </div>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#"><?php echo $username ?></span></a>
-            </li>
             </ul>
             </span>
         </div>
@@ -92,13 +85,13 @@ $username = $_SESSION["username"];
     <div class="container rounded mt-4 align-items-center">
         <form method="POST" action="save_summary.php" enctype="multipart/form-data">
             <div class="summary">
-                <div class="text" id="box_1" onclick="select(this.id)">
+                <div class="text" id="box_1" onclick="select(this)">
                     An independent and self-motivated business student with proven and tested business, procurement, sales, and marketing skills. Committed to prove myself in a challenging environment.
                 </div>
-                <div class="text" id="box_2" onclick="select(this.id)">
+                <div class="text" id="box_2" onclick="select(this)">
                     To seek and maintain a full-time position that offers professional challenges and adding value to the team by utilizing interpersonal skills, excellent time management and problem-solving skills.
                 </div>
-                <div class="text" id="box_3" onclick="select(this.id)">
+                <div class="text" id="box_3" onclick="select(this)">
                     Hardworking and passionate job seeker with strong <?php echo "skill,skill,skill,skill" ?> skills eager to secure entry-level [Job Title] position. Ready to help team achieve company goals.
                 </div>
             </div>
@@ -122,14 +115,16 @@ $username = $_SESSION["username"];
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script>
-        function select(id) {
-            var box = document.getElementById(id);
-            box.style.backgroundColor = "#A7D1CF";
-            var summary = box.innerHTML;
-            document.getElementById("mydata").value=summary;
+        function select(e) {
+            var summary = e.innerHTML;
+            var selected = document.getElementsByClassName("text");
+            Array.from(selected, child => {
+                child.style.backgroundColor = "white";
+            });
+            e.style.backgroundColor = "#A7D1CF";
+            document.getElementById("mydata").value = summary;
             console.log(document.getElementById("mydata").value);
         };
     </script>
 </body>
-
 </html>

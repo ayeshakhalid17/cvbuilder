@@ -1,7 +1,3 @@
-<?php
-session_start();
-$username=$_SESSION["username"];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,9 +45,6 @@ $username=$_SESSION["username"];
                     <a class="dropdown-item" href="#">Template 2</a>
                     <a class="dropdown-item" href="#">Template 3 </a>
                 </div>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#"><?php echo $username?></span></a>
             </li>
             </ul>
             </span>
@@ -111,7 +104,7 @@ $username=$_SESSION["username"];
                                         class="form-control" name="last_name" placeholder="Khalid"></div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Contact Number</label><input type="number"
+                                <div class="col-md-12"><label class="labels">Contact Number</label><input type="tel"
                                         class="form-control" placeholder="3127936922" name="contact" required></div>
                                 <div class="col-md-4"><label class="labels">City</label><input type="text"
                                         class="form-control" placeholder="Karachi" name="city" required></div>

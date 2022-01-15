@@ -1,7 +1,3 @@
-<?php
-session_start();
-$username=$_SESSION["username"];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,9 +46,6 @@ $username=$_SESSION["username"];
                     <a class="dropdown-item" href="#">Template 2</a>
                     <a class="dropdown-item" href="#">Template 3 </a>
                 </div>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#"><?php echo $username?></span></a>
             </li>
             </ul>
             </span>
