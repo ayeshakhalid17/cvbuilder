@@ -1,5 +1,6 @@
 <?php
 include 'config.php';
+session_start();
 if (isset($_POST['upload'])){
 $first_name=mysqli_real_escape_string($conn,$_POST['first_name']);
 $_SESSION['first_name']=$first_name;
