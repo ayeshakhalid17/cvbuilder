@@ -36,18 +36,10 @@ session_start();
             </span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">About</span></a>
+                <a class="nav-link" href="index.html#about">About</span></a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Templates
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Template 1</a>
-                    <a class="dropdown-item" href="#">Template 2</a>
-                    <a class="dropdown-item" href="#">Template 3 </a>
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="temp.php">Templates</span></a>
             </li>
             </ul>
             </span>
@@ -55,7 +47,7 @@ session_start();
     </nav>
     <div class="m-3 ml-5 row align-items-center">
         <div class="ml-4 mr-5">
-            <h4 style="color:white" class="h-font">Basic Information</h4>
+            <h4 class="h-font">Basic Information</h4>
             <p style="font-weight:500;">This will let the recruiters know your bio data like location etc.</p>
         </div>
         <div class="progress1">
@@ -87,7 +79,7 @@ session_start();
     </div>
     <div class="container">
             <form method="POST" action="save_basic.php" enctype="multipart/form-data">
-                <div class="row">
+                <div class="row shadow bg-white rounded opacity-75">
                     <div class="col-md-4 d-flex justify-content-center flex-column align-items-center">
                         <div class="rectangle">
                             <img id="output">

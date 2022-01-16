@@ -21,7 +21,7 @@ session_start();
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#"><img class="image" src="images/logo_transparent.png" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,18 +37,10 @@ session_start();
             </span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">About</span></a>
+                <a class="nav-link" href="index.html#about">About</span></a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Templates
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Template 1</a>
-                    <a class="dropdown-item" href="#">Template 2</a>
-                    <a class="dropdown-item" href="#">Template 3 </a>
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="temp.php">Templates</span></a>
             </li>
             </ul>
             </span>
@@ -56,7 +48,7 @@ session_start();
     </nav>
     <div class="m-3 ml-5 row align-items-center">
         <div class="ml-4 d-flex flex-column">
-            <h4 style="color:white" class="h-font">Skills</h4>
+            <h4 class="h-font">Skills</h4>
             <p style="font-weight:500;">Enter relevant skills with expertise level that will help you get recruited.<br>Mention atleast one skill.</p>
         </div>
         <div class="progress1">
@@ -86,7 +78,7 @@ session_start();
             </div>
           </div>
     </div>
-        <div class="container rounded mt-4 mb-4 align-items-center">
+        <div class="container rounded mt-4 mb-4 align-items-center shadow rounded opacity-75 bg-white p-4 pl-5 pr-5">
             <form method="POST" action="save_skills.php" enctype="multipart/form-data">
                 <div class="row align-items-center mb-2">
                     <div class="col-md-6">
@@ -146,7 +138,7 @@ session_start();
                 <br>
                 <a id="add_skill" class="add_skill4" onclick="add_skill_4()">Add another skill</a>
                 <a id="add_skill" class="add_skill5" onclick="add_skill_5()">Add another skill</a>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button align-left" type="submit"
+                <div class="text-center"><button class="btn btn-primary profile-button align-left" type="submit"
                         name="upload">Next : Summary</button></div>
             </form>
         </div>

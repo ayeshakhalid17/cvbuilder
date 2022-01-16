@@ -25,9 +25,10 @@ $last_name = $_SESSION["last_name"];
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#"><img class="image" src="images/logo_transparent.png" alt="logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
@@ -40,12 +41,10 @@ $last_name = $_SESSION["last_name"];
             </span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">About</span></a>
+                <a class="nav-link" href="index.html#about">About</span></a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="temp.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Templates
-                </a>
+            <li class="nav-item active">
+                <a class="nav-link" href="temp.php">Templates</span></a>
             </li>
             </ul>
             </span>
@@ -53,7 +52,7 @@ $last_name = $_SESSION["last_name"];
     </nav>
     <div class="m-3 ml-5 row align-items-center">
         <div class="ml-4 d-flex flex-column">
-            <h4 style="color:white" class="h-font">Summary</h4>
+            <h4 class="h-font">Summary</h4>
             <p style="font-weight:500;">Some templates are available for you to select an eye-catching summary of <br>your profile. Click on a template to select it.</p>
         </div>
         <div class="progress1">

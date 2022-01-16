@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="navBarAndFooter.css">
     <link rel="stylesheet" href="progress.css">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="bootstrap-4.6.1-dist/bootstrap-4.6.1-dist/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -64,42 +67,39 @@
             </span>
         </div>
     </nav>
-<div class="wrap-container pt-4 pb-3">
-    <div class="d-flex align-items-middle col-11 ">
-           <div class="progress1 col-8 ">
-               <div class="circle done">
-                 <span class="label">1</span>
-                 <span class="title" style="font-weight:500; color:black;">Basic</span>
-               </div>
-               <span class="bar"></span>
-               <div class="circle active">
-                 <span class="label">2</span>
-                 <span class="title" style="font-weight:500;">Experience</span>
-               </div>
-               <span class="bar"></span>
-               <div class="circle">
-                 <span class="label">3</span>
-                 <span class="title" style="font-weight:500;">Education</span>
-               </div>
-               <span class="bar"></span>
-               <div class="circle">
-                 <span class="label">4</span>
-                 <span class="title" style="font-weight:500;">Skills</span>
-               </div>
-               <span class="bar"></span>
-               <div class="circle">
-                 <span class="label">5</span>
-                 <span class="title" style="font-weight:500;" >Summary</span>
-               </div>
-             </div>
-       </div>
-        <div class="container rounded mt-5 mb-5">
-            <div class="ms-3">
-                <h4 class="heading ps-2">
-                    Work Experience
-                </h4>
-                <p class="pt-2 ps-2 lead">Tell us about your job from most recent to the oldest.</p>
+       <div class="m-3 ml-5 row align-items-center d-flex">
+        <div class="ml-4 d-flex flex-column">
+            <h4 style="font-family: 'Mochiy Pop P One', sans-serif;">Work Experience</h4>
+            <p style="font-weight:500;">Enter your work experience from latest to oldest.</p>
+        </div>
+        <div class="progress1">
+            <div class="circle done">
+              <span class="label">1</span>
+              <span class="title" style="font-weight:500;">Basic</span>
             </div>
+            <span class="bar done"></span>
+            <div class="circle done">
+              <span class="label">2</span>
+              <span class="title" style="font-weight:500;">Experience</span>
+            </div>
+            <span class="bar half"></span>
+            <div class="circle done">
+              <span class="label">3</span>
+              <span class="title" style="font-weight:500;">Education</span>
+            </div>
+            <span class="bar"></span>
+            <div class="circle active">
+              <span class="label">4</span>
+              <span class="title" style="font-weight:500;">Skills</span>
+            </div>
+            <span class="bar"></span>
+            <div class="circle">
+              <span class="label">5</span>
+              <span class="title" style="font-weight:500;" >Summary</span>
+            </div>
+          </div>
+    </div>
+        <div class="container rounded mt-5 mb-5">
             <form method="post" enctype="application/x-www-form-urlencoded">
                 <div class="ms-4 shadow-sm mb-5 bg-white rounded p-4">
                     <div class="row pt-1 ps-2">
