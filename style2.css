@@ -58,6 +58,8 @@ justify-content:center ;}
 }
 .h-font {
     font-family: 'Mochiy Pop P One', sans-serif;
+    font-weight: lighter;
+    font-size: 1.25rem;
 }
 .image{
     width: 160px;
