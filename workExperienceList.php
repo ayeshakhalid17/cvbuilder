@@ -50,7 +50,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#"><img class="image" src="images/logo_transparent.png" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,18 +66,10 @@
             </span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">About</span></a>
+                <a class="nav-link" href="index.html#about">About</span></a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Templates
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Template 1</a>
-                    <a class="dropdown-item" href="#">Template 2</a>
-                    <a class="dropdown-item" href="#">Template 3 </a>
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="temp.php">Templates</span></a>
             </li>
             </ul>
             </span>

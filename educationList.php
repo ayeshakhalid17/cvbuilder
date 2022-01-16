@@ -66,24 +66,15 @@
             </span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">About</span></a>
+                <a class="nav-link" href="index.html#about">About</span></a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Templates
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Template 1</a>
-                    <a class="dropdown-item" href="#">Template 2</a>
-                    <a class="dropdown-item" href="#">Template 3 </a>
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="temp.php">Templates</span></a>
             </li>
             </ul>
             </span>
         </div>
     </nav>
-    
 
     <div class="wrap-container pt-4 pb-3">
     <div class="d-flex align-items-middle col-11 ">

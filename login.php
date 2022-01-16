@@ -8,7 +8,7 @@ if(isset($_POST["login"])){
     if(mysqli_num_rows($user)>0){
         $row=mysqli_fetch_assoc($user);
         $_SESSION['username']=$username;
-        echo "<script>window.location.href='temp.html';</script>";
+        echo "<script>window.location.href='temp.php';</script>";
     }
     else{
         echo "<script>alert(\"Login details are incorrect. Please try again.\");
@@ -24,13 +24,14 @@ if(isset($_POST["login"])){
 	<link rel="stylesheet" type="text/css" href="style1.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	
 		<div class="login-content">
 			<form action="" method="post">
-				<img src="avatar.png">
+				<img src="imgaes/avatar.png">
 				<h2 class="title">Log In</h2>
            		<div class="input-div one">
            		   <div class="i">
