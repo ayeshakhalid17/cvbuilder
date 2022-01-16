@@ -50,9 +50,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#"><img class="image" src="images/logo_transparent.png" alt="logo"></a>
-        <h2 class="text-info">CV Builder</h2>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -125,10 +124,10 @@
             </div>
             <table class="table vertical-align: middle table-bordered m-4 col-10 ">
                 <?php
-                    if(isset($_SESSION['email']))
+                    if(isset($_SESSION['first_name']) && isset($_SESSION['last_name']))
                     {
                         $count=1;
-                        $query1="SELECT * FROM `user_school_mapping` WHERE `email`='$_SESSION[email]'";
+                        $query1="SELECT * FROM `user_school_mapping` WHERE `fname`='$_SESSION[first_name]'AND `lname`='$_SESSION[last_name]'";
                         $result = mysqli_query($conn, $query1);
                         if (mysqli_num_rows($result)>0) 
                         {
@@ -150,8 +149,8 @@
                                                 </p>
                                                 
                                             </td>
-                                ";
-                ?>
+                                            ";
+                                            ?>
                                             <form method="post">
                                             <td class='pt-2 ps-4 pb-2 pe-3 tableButtons col-1' >
                                                 <input type="hidden" name="school_id" value="<?php echo $rows['school_id']?>">
@@ -200,7 +199,7 @@
                 <i class=" fas fa-plus-circle pt-1 pe-2 "></i> Add Another School
             </div>
             <div class="d-flex m-3 p-3 justify-content-center col-10" >
-            <button type="button" class="btn btn-primary ps-4 pr-4 pt-2 pb-2" onclick="window.location.href='skills.html'" >Next : Skills</button>
+            <button type="button" class="btn btn-primary ps-4 pr-4 pt-2 pb-2" onclick="window.location.href='skills.php'" >Next : Skills</button>
             </div>
         </div>
 

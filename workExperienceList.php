@@ -40,10 +40,11 @@
         cursor: pointer;
         background-color: lightgrey;
     }
-    .btn{
-        border: none; 
-        color: white; 
-        font-size: 16px; 
+
+    .btn {
+        border: none;
+        color: white;
+        font-size: 16px;
     }
     </style>
 </head>
@@ -51,7 +52,6 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#"><img class="image" src="images/logo_transparent.png" alt="logo"></a>
-        <h2 class="text-info">CV Builder</h2>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -84,34 +84,34 @@
         </div>
     </nav>
     <div class="wrap-container pt-4 pb-3">
-    <div class="d-flex align-items-middle col-11 ">
-           <div class="progress1 col-8 ">
-               <div class="circle done">
-                 <span class="label">1</span>
-                 <span class="title" style="font-weight:500; color:black;">Basic</span>
-               </div>
-               <span class="bar"></span>
-               <div class="circle active">
-                 <span class="label">2</span>
-                 <span class="title" style="font-weight:500;">Experience</span>
-               </div>
-               <span class="bar"></span>
-               <div class="circle">
-                 <span class="label">3</span>
-                 <span class="title" style="font-weight:500;">Education</span>
-               </div>
-               <span class="bar"></span>
-               <div class="circle">
-                 <span class="label">4</span>
-                 <span class="title" style="font-weight:500;">Skills</span>
-               </div>
-               <span class="bar"></span>
-               <div class="circle">
-                 <span class="label">5</span>
-                 <span class="title" style="font-weight:500;" >Summary</span>
-               </div>
-             </div>
-       </div>
+        <div class="d-flex align-items-middle col-11 ">
+            <div class="progress1 col-8 ">
+                <div class="circle done">
+                    <span class="label">1</span>
+                    <span class="title" style="font-weight:500; color:black;">Basic</span>
+                </div>
+                <span class="bar"></span>
+                <div class="circle active">
+                    <span class="label">2</span>
+                    <span class="title" style="font-weight:500;">Experience</span>
+                </div>
+                <span class="bar"></span>
+                <div class="circle">
+                    <span class="label">3</span>
+                    <span class="title" style="font-weight:500;">Education</span>
+                </div>
+                <span class="bar"></span>
+                <div class="circle">
+                    <span class="label">4</span>
+                    <span class="title" style="font-weight:500;">Skills</span>
+                </div>
+                <span class="bar"></span>
+                <div class="circle">
+                    <span class="label">5</span>
+                    <span class="title" style="font-weight:500;">Summary</span>
+                </div>
+            </div>
+        </div>
         <div class="container rounded mt-3 mb-5">
             <div class="heading ms-3">
                 <h4 class="ps-2">
@@ -121,10 +121,10 @@
             </div>
             <table class="table vertical-align: middle table-bordered m-4 col-10 ">
                 <?php
-                    if(isset($_SESSION['email']))
+                    if(isset($_SESSION['first_name']) && isset($_SESSION['last_name']))
                     {
                         $count=1;
-                        $query1="SELECT * FROM `cvbuilder`.`user_work_mapping` WHERE `email`='$_SESSION[email]'";
+                        $query1="SELECT * FROM `cvbuilder`.`user_work_mapping` WHERE `fname`='$_SESSION[first_name]'AND `lname`='$_SESSION[last_name]'";
                         $result = mysqli_query($conn, $query1);
                         if (mysqli_num_rows($result)>0) 
                         {
@@ -148,14 +148,15 @@
                                             </td>
                                 ";
                 ?>
-                                            <form method="post">
-                                            <td class='pt-2 ps-4 pb-2 pe-3 tableButtons col-1' >
-                                                <input type="hidden" name="work_id" value="<?php echo $rows['work_id']?>">
-                                                <button class="btn" type="submit" name="delete"><i class='fas fa-lg fa-trash pt-2 ' style='color:brown;'></i></button>
-                                            </td>
-                                            </form>
-                                        </tr>
-                                    </tbody>
+                <form method="post">
+                    <td class='pt-2 ps-4 pb-2 pe-3 tableButtons col-1'>
+                        <input type="hidden" name="work_id" value="<?php echo $rows['work_id']?>">
+                        <button class="btn" type="submit" name="delete"><i class='fas fa-lg fa-trash pt-2 '
+                                style='color:brown;'></i></button>
+                    </td>
+                </form>
+                </tr>
+                </tbody>
                 <?php
                                 $count+=1;
                                 
@@ -195,8 +196,9 @@
                 onclick="window.location.href='workExperience.php'">
                 <i class=" fas fa-plus-circle pt-1 pe-2 "></i> Add Another Workplace
             </div>
-            <div class="d-flex m-3 p-3 justify-content-center col-10" >
-            <button type="button" class="btn btn-primary ps-4 pr-4 pt-2 pb-2" onclick="window.location.href='education.php'" >Next : Education</button>
+            <div class="d-flex m-3 p-3 justify-content-center col-10">
+                <button type="button" class="btn btn-primary ps-4 pr-4 pt-2 pb-2"
+                    onclick="window.location.href='education.php'">Next : Education</button>
             </div>
         </div>
 

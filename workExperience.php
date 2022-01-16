@@ -31,9 +31,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#"><img class="image" src="images/logo_transparent.png" alt="logo"></a>
-        <h2 class="text-info">CV Builder</h2>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -249,26 +248,21 @@
     </script>
 
     <?php
-        if (isset($_SESSION['email'])){
+        if (isset($_SESSION['first_name']) && isset($_SESSION['last_name'])){
             if(isset($_POST['workexperience'])) {
                 $query = "SELECT * FROM `user_work_mapping` WHERE`job_title`='$_POST[jobName]'";
                 $result = mysqli_query($conn, $query);
                 if ($result) {
-                    if (mysqli_num_rows($result) > 0) {
-                        echo "<script>alert('You have already added this workplace!')
-                            window.location.href='workExperienceList.php';
-                            </script>";
-                    } else {
                         if($_POST['working']==1)
                         {
                             $_POST['endDate'] = null;
                         }
-                        $add1 = "INSERT INTO `user_work_mapping`(`email`,`job_title`) VALUES ('$_SESSION[email]','$_POST[jobName]')";
+                        $add1 = "INSERT INTO `user_work_mapping`(`fname`,`lname`,`job_title`) VALUES ('$_SESSION[first_name]','$_SESSION[last_name]','$_POST[jobName]')";
                         $add2="INSERT INTO `user_work_details`(`title`, `employer`, `city`, `state`, `start`, `end`, `current`) VALUES ('$_POST[jobName]','$_POST[employer]','$_POST[city]','$_POST[state]','$_POST[startDate]','$_POST[endDate]','$_POST[working]')";
                         $run1 = mysqli_query($conn, $add1);
                         $run2 = mysqli_query($conn, $add2);
                             if ($run1 && $run2) {
-                                echo "<script>alert('New Work Experience - ".$_POST['jobName']." - Added Successfully!')
+                                echo "<script>
                                 window.location.href='workExperienceList.php';
                                 </script>";
                             } 
@@ -278,7 +272,6 @@
                                 </script>";
                             }
                         }
-                    }
                 else {
                     echo "<script>alert('Cannot run Query')
                             window.location.href='workExperience.php';

@@ -32,9 +32,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="#"><img class="image" src="images/logo_transparent.png" alt="logo"></a>
-        <h2 class="text-info">CV Builder</h2>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -262,41 +261,34 @@
     </script>
 
     <?php
-        if (isset($_SESSION['email'])){
+        if (isset($_SESSION['first_name']) && isset($_SESSION['last_name'])){
             if(isset($_POST['education'])) {
-                $query = "SELECT * FROM `user_school_mapping` WHERE`school_name`='$_POST[schoolName]'";
+                $query = "SELECT * FROM `user_school_mapping` WHERE`school_name`='$_POST[schoolName]' AND `fname`='$_SESSION[first_name]' AND `lname`='$_SESSION[last_name]' ";
                 $result = mysqli_query($conn, $query);
                 if ($result) {
-                    if (mysqli_num_rows($result) > 0) {
-                        echo "<script>alert('You have already added this school!')
-                            window.location.href='educationList.php';
+                    if($_POST['studying']==1)
+                    {
+                        $_POST['endDate'] = null;
+                    }
+                    if($_POST['degree']=="Matric")
+                    {
+                        $_POST['field'] = null; 
+                    }
+                    $add1 ="INSERT INTO `user_school_mapping`(`fname`,`lname`,`school_name`) VALUES ('$_SESSION[first_name]','$_SESSION[last_name]','$_POST[schoolName]')";
+                    $add2="INSERT INTO `user_education_details`(`name`, `location`, `degree`, `field`, `start`, `end`, `current`) VALUES ('$_POST[schoolName]','$_POST[schoolLocation]','$_POST[degree]','$_POST[field]','$_POST[startDate]','$_POST[endDate]','$_POST[studying]')";
+                    $run1 = mysqli_query($conn, $add1);
+                    $run2 = mysqli_query($conn, $add2);
+                        if ($run1 && $run2) {
+                            echo "window.location.href='educationList.php';
                             </script>";
-                    } else {
-                        if($_POST['studying']==1)
-                        {
-                            $_POST['endDate'] = null;
-                        }
-                        if($_POST['degree']=="Matric")
-                        {
-                            $_POST['field'] = null; 
-                        }
-                        $add1 = "INSERT INTO `user_school_mapping`(`email`,`school_name`) VALUES ('$_SESSION[email]','$_POST[schoolName]')";
-                        $add2="INSERT INTO `user_education_details`(`name`, `location`, `degree`, `field`, `start`, `end`, `current`) VALUES ('$_POST[schoolName]','$_POST[schoolLocation]','$_POST[degree]','$_POST[field]','$_POST[startDate]','$_POST[endDate]','$_POST[studying]')";
-                        $run1 = mysqli_query($conn, $add1);
-                        $run2 = mysqli_query($conn, $add2);
-                            if ($run1 && $run2) {
-                                echo "<script>alert('New Education - ".$_POST['schoolName']." - Added Successfully!')
-                                window.location.href='educationList.php';
-                                </script>";
-                            } 
-                            else {
-                                    echo "<script>alert('Failed to add this school!')
-                                window.location.href='education.php';
-                                </script>";
-                            }
+                        } 
+                        else {
+                            echo "<script>alert('Failed to add this school!')
+                            window.location.href='education.php';
+                            </script>";
                         }
                     }
-                else {
+                    else {
                     echo "<script>alert('Cannot run Query')
                             window.location.href='education.php';
                             </script>";
