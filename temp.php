@@ -135,5 +135,4 @@ if (isset($_POST['button1'])) {
     document.getElementById("mydata").value=bgcolor;}
 </script>
 </body>
-
 </html>

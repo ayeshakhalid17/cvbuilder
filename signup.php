@@ -38,7 +38,7 @@ if (isset($_POST["signup"])) {
 <body>
 		<div class="login-content">
 			<form action="" method="post">
-				<img src="avatar.png">
+				<img src="imgaes/avatar.png">
 				<h2 class="title">Sign Up</h2>
                 <div class="input-div email">
                     <div class="i"> 
